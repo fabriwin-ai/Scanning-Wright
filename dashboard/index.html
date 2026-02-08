@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Price Filter Ecosystem</title>
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <aside class="sidebar">
+        <div class="brand">
+          <div class="brand__icon">PF</div>
+          <div>
+            <p class="brand__title">Price Filter</p>
+            <p class="brand__subtitle">Ecosistema Playwright</p>
+          </div>
+        </div>
+
+        <nav class="nav">
+          <button class="nav__item nav__item--active">Dashboard</button>
+          <button class="nav__item">Targets</button>
+          <button class="nav__item">Filtros</button>
+          <button class="nav__item">Reportes</button>
+          <button class="nav__item">Observabilidad</button>
+        </nav>
+
+        <div class="sidebar__status">
+          <p class="label">Estado</p>
+          <div class="status-pill status-pill--ok">Crawler activo</div>
+          <p class="muted">Última ejecución: hace 12 min</p>
+          <button class="btn btn--ghost btn--small" data-theme-toggle>
+            Cambiar tema
+          </button>
+        </div>
+      </aside>
+
+      <main class="main">
+        <header class="header">
+          <div>
+            <h1>HUD del Ecosistema</h1>
+            <p class="muted">Visión unificada de filtros de precio, categoría y ubicación.</p>
+          </div>
+          <div class="header__actions">
+            <button class="btn btn--ghost">Exportar</button>
+            <button class="btn btn--primary">Nueva corrida</button>
+          </div>
+        </header>
+
+        <section class="grid stats">
+          <div class="card">
+            <p class="label">Items filtrados</p>
+            <h2 data-count="4582">0</h2>
+            <p class="trend trend--up">+8.2% vs semana anterior</p>
+          </div>
+          <div class="card">
+            <p class="label">Cobertura de sitios</p>
+            <h2 data-count="12">0</h2>
+            <p class="muted">3 pendientes por mantenimiento</p>
+          </div>
+          <div class="card">
+            <p class="label">Rango precio</p>
+            <h2>$120 - $4,900</h2>
+            <p class="muted">MXN | 18 categorías</p>
+          </div>
+          <div class="card">
+            <p class="label">Ubicaciones</p>
+            <h2 data-count="6">0</h2>
+            <p class="muted">CDMX, GDL, MTY, QRO...</p>
+          </div>
+        </section>
+
+        <section class="grid">
+          <div class="card card--wide">
+            <div class="card__header">
+              <h3>Pipeline de filtrado</h3>
+              <span class="status-pill status-pill--ok">Todo en verde</span>
+            </div>
+            <div class="pipeline">
+              <div class="pipeline__step">
+                <p class="label">1. Ingesta</p>
+                <p class="value">Playwright + UI filters</p>
+              </div>
+              <div class="pipeline__step">
+                <p class="label">2. Normalización</p>
+                <p class="value">Monedas, formatos, dedupe</p>
+              </div>
+              <div class="pipeline__step">
+                <p class="label">3. Selección</p>
+                <p class="value">Mejor precio + cobertura</p>
+              </div>
+              <div class="pipeline__step">
+                <p class="label">4. Persistencia</p>
+                <p class="value">SQLite + reportes</p>
+              </div>
+            </div>
+            <div class="progress">
+              <div class="progress__bar" data-progress></div>
+              <p class="muted">Progreso de corrida: 42%</p>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card__header">
+              <h3>Filtros activos</h3>
+              <button class="btn btn--ghost btn--small">Editar</button>
+            </div>
+            <div class="filters">
+              <div>
+                <p class="label">Categoría</p>
+                <p class="value">Electrónica, Hogar, Moda</p>
+              </div>
+              <div>
+                <p class="label">Ubicación</p>
+                <p class="value">MX / CDMX / Polanco</p>
+              </div>
+              <div>
+                <p class="label">Rango precio</p>
+                <p class="value">$100 - $5,000 MXN</p>
+              </div>
+            </div>
+            <div class="quick-actions">
+              <button class="btn btn--primary btn--small">Actualizar targets</button>
+              <button class="btn btn--ghost btn--small">Limpiar filtros</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="grid">
+          <div class="card">
+            <div class="card__header">
+              <h3>Top categorías</h3>
+              <span class="muted">Últimas 24h</span>
+            </div>
+            <ul class="list">
+              <li>Electrónica <span>$2,320 avg</span></li>
+              <li>Hogar <span>$1,180 avg</span></li>
+              <li>Moda <span>$740 avg</span></li>
+              <li>Gaming <span>$3,800 avg</span></li>
+            </ul>
+          </div>
+          <div class="card">
+            <div class="card__header">
+              <h3>Ubicaciones clave</h3>
+              <span class="muted">Latencia media</span>
+            </div>
+            <ul class="list">
+              <li>CDMX <span>1.2s</span></li>
+              <li>Guadalajara <span>1.4s</span></li>
+              <li>Monterrey <span>1.6s</span></li>
+              <li>Querétaro <span>1.8s</span></li>
+            </ul>
+          </div>
+          <div class="card">
+            <div class="card__header">
+              <h3>Alertas</h3>
+              <span class="status-pill status-pill--warn">2 abiertas</span>
+            </div>
+            <ul class="list">
+              <li>Desvío de precio > 12% <span>Hoy</span></li>
+              <li>Selector inválido <span>Ayer</span></li>
+              <li>Timeouts elevados <span>2 días</span></li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="grid">
+          <div class="card card--wide">
+            <div class="card__header">
+              <h3>Monitoreo de targets</h3>
+              <span class="muted">Estado en tiempo real</span>
+            </div>
+            <div class="targets" data-targets-list></div>
+          </div>
+
+          <div class="card">
+            <div class="card__header">
+              <h3>Snapshot</h3>
+              <span class="muted">Mejor precio</span>
+            </div>
+            <div class="snapshot">
+              <p class="label">Smart TV 55"</p>
+              <h2>$7,890</h2>
+              <p class="muted">market-sur · 14 min</p>
+              <button class="btn btn--primary btn--small">Ver detalle</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="grid">
+          <div class="card card--wide">
+            <div class="card__header">
+              <h3>Targets desde interfaz</h3>
+              <span class="muted">Iterativo, sin hardcoding</span>
+            </div>
+            <form class="target-form" data-target-form>
+              <label>
+                <span class="label">Nombre del sitio</span>
+                <input type="text" name="name" placeholder="ej. marketplace-norte" required />
+              </label>
+              <label>
+                <span class="label">URL base</span>
+                <input type="url" name="url" placeholder="https://sitio.com" required />
+              </label>
+              <label>
+                <span class="label">Categoría</span>
+                <input type="text" name="category" placeholder="Electrónica" />
+              </label>
+              <label>
+                <span class="label">Ubicación</span>
+                <input type="text" name="location" placeholder="MX / CDMX" />
+              </label>
+              <button class="btn btn--primary">Agregar target</button>
+            </form>
+          </div>
+
+          <div class="card">
+            <div class="card__header">
+              <h3>Reporte inferido</h3>
+              <span class="muted">Generado desde targets</span>
+            </div>
+            <ul class="report" data-report-list></ul>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="assets/app.js"></script>
+  </body>
+</html>
