@@ -1,0 +1,276 @@
+:root {
+  color-scheme: dark;
+  --bg: #0d1117;
+  --panel: #141b24;
+  --panel-alt: #1c2530;
+  --text: #eef1f6;
+  --muted: #98a2b3;
+  --accent: #67e8f9;
+  --accent-strong: #22d3ee;
+  --ok: #34d399;
+  --warn: #fbbf24;
+  --border: #273343;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.app {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  min-height: 100vh;
+}
+
+.sidebar {
+  background: var(--panel);
+  padding: 32px 24px;
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.brand__icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #22d3ee, #0ea5e9);
+  color: #03111f;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+}
+
+.brand__title {
+  margin: 0;
+  font-weight: 600;
+}
+
+.brand__subtitle {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.nav__item {
+  background: transparent;
+  border: 1px solid transparent;
+  color: var(--text);
+  padding: 10px 14px;
+  border-radius: 10px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.nav__item--active,
+.nav__item:hover {
+  background: var(--panel-alt);
+  border-color: var(--border);
+}
+
+.sidebar__status {
+  background: var(--panel-alt);
+  padding: 16px;
+  border-radius: 14px;
+}
+
+.main {
+  padding: 32px 36px 40px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 28px;
+}
+
+.header h1 {
+  margin: 0 0 6px;
+  font-size: 1.8rem;
+}
+
+.header__actions {
+  display: flex;
+  gap: 12px;
+}
+
+.grid {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  margin-bottom: 24px;
+}
+
+.stats .card h2 {
+  margin: 8px 0 4px;
+  font-size: 1.6rem;
+}
+
+.card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 18px;
+  box-shadow: 0 16px 32px rgba(4, 8, 15, 0.4);
+}
+
+.card--wide {
+  grid-column: span 2;
+}
+
+.card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.label {
+  color: var(--muted);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin: 0 0 4px;
+}
+
+.muted {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.value {
+  font-size: 0.98rem;
+  margin: 0;
+}
+
+.trend {
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+.trend--up {
+  color: var(--ok);
+}
+
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  background: rgba(103, 232, 249, 0.15);
+  color: var(--accent);
+}
+
+.status-pill--ok {
+  background: rgba(52, 211, 153, 0.18);
+  color: var(--ok);
+}
+
+.status-pill--warn {
+  background: rgba(251, 191, 36, 0.15);
+  color: var(--warn);
+}
+
+.btn {
+  border-radius: 10px;
+  padding: 10px 16px;
+  font-size: 0.9rem;
+  border: 1px solid transparent;
+  cursor: pointer;
+  background: var(--panel-alt);
+  color: var(--text);
+}
+
+.btn--primary {
+  background: linear-gradient(120deg, #22d3ee, #0ea5e9);
+  color: #04111d;
+  font-weight: 600;
+}
+
+.btn--ghost {
+  border: 1px solid var(--border);
+  background: transparent;
+}
+
+.btn--small {
+  padding: 6px 12px;
+  font-size: 0.78rem;
+}
+
+.pipeline {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+}
+
+.pipeline__step {
+  background: var(--panel-alt);
+  border-radius: 12px;
+  padding: 12px;
+}
+
+.filters {
+  display: grid;
+  gap: 12px;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.list li {
+  display: flex;
+  justify-content: space-between;
+  background: var(--panel-alt);
+  padding: 10px 12px;
+  border-radius: 10px;
+}
+
+@media (max-width: 920px) {
+  .app {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .card--wide {
+    grid-column: span 1;
+  }
+}

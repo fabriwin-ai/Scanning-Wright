@@ -21,3 +21,8 @@ python automation/price_scraper.py --config config/targets.yaml
 
 Los resultados se guardan en `data/price_results.json`, la base local en `data/prices.sqlite`,
 y el reporte agregado en `data/report.md`.
+
+## Dashboard
+
+La interfaz visual vive en `dashboard/index.html` y ofrece un HUD minimalista para monitorear
+el ecosistema de filtrado (precios, categorías y ubicaciones).
