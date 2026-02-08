@@ -12,6 +12,17 @@
   --border: #273343;
 }
 
+body.theme--frost {
+  --bg: #0b1220;
+  --panel: #121826;
+  --panel-alt: #1a2433;
+  --text: #f5f9ff;
+  --muted: #a7b2c7;
+  --accent: #a5f3fc;
+  --accent-strong: #38bdf8;
+  --border: #233247;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -92,6 +103,8 @@ body {
   background: var(--panel-alt);
   padding: 16px;
   border-radius: 14px;
+  display: grid;
+  gap: 10px;
 }
 
 .main {
@@ -233,9 +246,28 @@ body {
   padding: 12px;
 }
 
+.progress {
+  margin-top: 16px;
+}
+
+.progress__bar {
+  height: 6px;
+  width: 42%;
+  background: linear-gradient(90deg, var(--accent-strong), var(--accent));
+  border-radius: 999px;
+  transition: width 0.6s ease;
+}
+
 .filters {
   display: grid;
   gap: 12px;
+}
+
+.quick-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 16px;
+  flex-wrap: wrap;
 }
 
 .list {
@@ -252,6 +284,25 @@ body {
   background: var(--panel-alt);
   padding: 10px 12px;
   border-radius: 10px;
+}
+
+.targets {
+  display: grid;
+  gap: 12px;
+}
+
+.target {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--panel-alt);
+  padding: 12px;
+  border-radius: 12px;
+}
+
+.snapshot {
+  display: grid;
+  gap: 8px;
 }
 
 @media (max-width: 920px) {

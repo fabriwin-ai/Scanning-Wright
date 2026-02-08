@@ -29,6 +29,9 @@
           <p class="label">Estado</p>
           <div class="status-pill status-pill--ok">Crawler activo</div>
           <p class="muted">Última ejecución: hace 12 min</p>
+          <button class="btn btn--ghost btn--small" data-theme-toggle>
+            Cambiar tema
+          </button>
         </div>
       </aside>
 
@@ -47,7 +50,7 @@
         <section class="grid stats">
           <div class="card">
             <p class="label">Items filtrados</p>
-            <h2>4,582</h2>
+            <h2 data-count="4582">0</h2>
             <p class="trend trend--up">+8.2% vs semana anterior</p>
           </div>
           <div class="card">
@@ -62,7 +65,7 @@
           </div>
           <div class="card">
             <p class="label">Ubicaciones</p>
-            <h2>6 regiones</h2>
+            <h2 data-count="6">0</h2>
             <p class="muted">CDMX, GDL, MTY, QRO...</p>
           </div>
         </section>
@@ -91,6 +94,10 @@
                 <p class="value">SQLite + reportes</p>
               </div>
             </div>
+            <div class="progress">
+              <div class="progress__bar" data-progress></div>
+              <p class="muted">Progreso de corrida: 42%</p>
+            </div>
           </div>
 
           <div class="card">
@@ -111,6 +118,10 @@
                 <p class="label">Rango precio</p>
                 <p class="value">$100 - $5,000 MXN</p>
               </div>
+            </div>
+            <div class="quick-actions">
+              <button class="btn btn--primary btn--small">Actualizar targets</button>
+              <button class="btn btn--ghost btn--small">Limpiar filtros</button>
             </div>
           </div>
         </section>
@@ -152,7 +163,54 @@
             </ul>
           </div>
         </section>
+
+        <section class="grid">
+          <div class="card card--wide">
+            <div class="card__header">
+              <h3>Monitoreo de targets</h3>
+              <span class="muted">Estado en tiempo real</span>
+            </div>
+            <div class="targets">
+              <div class="target">
+                <div>
+                  <p class="label">ejemplo-market</p>
+                  <p class="value">CDMX · Electrónica</p>
+                </div>
+                <div class="status-pill status-pill--ok">OK</div>
+              </div>
+              <div class="target">
+                <div>
+                  <p class="label">tienda-norte</p>
+                  <p class="value">MTY · Hogar</p>
+                </div>
+                <div class="status-pill">Analizando</div>
+              </div>
+              <div class="target">
+                <div>
+                  <p class="label">market-sur</p>
+                  <p class="value">QRO · Moda</p>
+                </div>
+                <div class="status-pill status-pill--warn">Atención</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card__header">
+              <h3>Snapshot</h3>
+              <span class="muted">Mejor precio</span>
+            </div>
+            <div class="snapshot">
+              <p class="label">Smart TV 55"</p>
+              <h2>$7,890</h2>
+              <p class="muted">market-sur · 14 min</p>
+              <button class="btn btn--primary btn--small">Ver detalle</button>
+            </div>
+          </div>
+        </section>
       </main>
     </div>
+
+    <script src="assets/app.js"></script>
   </body>
 </html>
