@@ -55,7 +55,7 @@
           </div>
           <div class="card">
             <p class="label">Cobertura de sitios</p>
-            <h2>12 / 15</h2>
+            <h2 data-count="12">0</h2>
             <p class="muted">3 pendientes por mantenimiento</p>
           </div>
           <div class="card">
@@ -170,29 +170,7 @@
               <h3>Monitoreo de targets</h3>
               <span class="muted">Estado en tiempo real</span>
             </div>
-            <div class="targets">
-              <div class="target">
-                <div>
-                  <p class="label">ejemplo-market</p>
-                  <p class="value">CDMX · Electrónica</p>
-                </div>
-                <div class="status-pill status-pill--ok">OK</div>
-              </div>
-              <div class="target">
-                <div>
-                  <p class="label">tienda-norte</p>
-                  <p class="value">MTY · Hogar</p>
-                </div>
-                <div class="status-pill">Analizando</div>
-              </div>
-              <div class="target">
-                <div>
-                  <p class="label">market-sur</p>
-                  <p class="value">QRO · Moda</p>
-                </div>
-                <div class="status-pill status-pill--warn">Atención</div>
-              </div>
-            </div>
+            <div class="targets" data-targets-list></div>
           </div>
 
           <div class="card">
@@ -206,6 +184,42 @@
               <p class="muted">market-sur · 14 min</p>
               <button class="btn btn--primary btn--small">Ver detalle</button>
             </div>
+          </div>
+        </section>
+
+        <section class="grid">
+          <div class="card card--wide">
+            <div class="card__header">
+              <h3>Targets desde interfaz</h3>
+              <span class="muted">Iterativo, sin hardcoding</span>
+            </div>
+            <form class="target-form" data-target-form>
+              <label>
+                <span class="label">Nombre del sitio</span>
+                <input type="text" name="name" placeholder="ej. marketplace-norte" required />
+              </label>
+              <label>
+                <span class="label">URL base</span>
+                <input type="url" name="url" placeholder="https://sitio.com" required />
+              </label>
+              <label>
+                <span class="label">Categoría</span>
+                <input type="text" name="category" placeholder="Electrónica" />
+              </label>
+              <label>
+                <span class="label">Ubicación</span>
+                <input type="text" name="location" placeholder="MX / CDMX" />
+              </label>
+              <button class="btn btn--primary">Agregar target</button>
+            </form>
+          </div>
+
+          <div class="card">
+            <div class="card__header">
+              <h3>Reporte inferido</h3>
+              <span class="muted">Generado desde targets</span>
+            </div>
+            <ul class="report" data-report-list></ul>
           </div>
         </section>
       </main>

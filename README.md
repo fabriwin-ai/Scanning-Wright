@@ -26,3 +26,6 @@ y el reporte agregado en `data/report.md`.
 
 La interfaz visual vive en `dashboard/index.html` y ofrece un HUD minimalista para monitorear
 el ecosistema de filtrado (precios, categorías y ubicaciones).
+
+La sección "Targets desde interfaz" permite registrar sitios directamente en el dashboard, guardarlos en
+localStorage y reflejarlos en el reporte inferido sin hardcodear URLs.
