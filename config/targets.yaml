@@ -1,0 +1,50 @@
+sites:
+  - name: ejemplo-market
+    base_url: "https://example.com"
+    category_paths:
+      - "productos/electronica"
+      - "productos/hogar"
+    location:
+      country: "MX"
+      region: "CDMX"
+      city: "Ciudad de Mexico"
+    selectors:
+      product_card: "[data-product-card]"
+      price: "[data-price]"
+      title: "[data-title]"
+      url: "a"
+      next_page: "[data-next-page]"
+      currency: "MXN"
+    ui_filters:
+      price_min: "#price-min"
+      price_max: "#price-max"
+      location: "#location"
+      category: "#category"
+      apply: "button[data-apply]"
+      location_value: "Ciudad de Mexico"
+      category_value: "electronica"
+filters:
+  price:
+    min: 100
+    max: 5000
+    currency: "MXN"
+  categories:
+    - "electronica"
+    - "hogar"
+  locations:
+    - country: "MX"
+      region: "CDMX"
+      city: "Ciudad de Mexico"
+output:
+  format: "json"
+  path: "data/price_results.json"
+  report_path: "data/report.md"
+  db_path: "data/prices.sqlite"
+browser:
+  headless: true
+  timeout_ms: 20000
+  rate_limit_seconds: 1.5
+  max_retries: 3
+  user_agents:
+    - "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+    - "Mozilla/5.0 (Macintosh; Intel Mac OS X 13_2) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.3 Safari/605.1.15"
